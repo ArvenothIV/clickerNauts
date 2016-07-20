@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+
+	  <title>Not Holy Wars</title>
+	</head>
+
+	<body>
+		<div id = "golddiv" rel="tooltip">
+		<!-- <img src = "images/money_creditssmall.png" Title="Gold" title ="" data-html="true" id="resgoldimage" > -->
+			<div class="col1"> Credits:
+			</div>
+			<div class="col2"><span id="credits">0</span>  <!--( <span id="creditspersec">0</span> gps)-->
+			</div>
+		</div>
+		<div id = 'gathercredits'>
+			<input type="image"  id="clickmoney" tabIndex="-1" onclick="clickThing(1,'creditsmouse')" src = "images/creditChip.png" title = "Click to gather credits yourself."></li>
+		</div>
+
+		<div id="Production" class= "panel panel-default">
+			<div class = "panel-heading">
+				<div class="panel-title" id = 'ProductionTitle'>Village</div>
+			</div>
+		
+			<div id="PeasantTab" class = "container">
+				<br />
+				<a id ="BtnPeasantDesc" tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="Peasants" data-content=""> CreditGatherer <span class='badge' id="CreditGatherer">0</span></a>
+				<br /><br />
+				<div class="btn-group" role="group" aria-label="...">
+				<button id=btnbuyPeasant onclick="CreditGatherer.buyOne()"	type="button" class="btn btn-default">Recruit CreditGatherer</button>
+				<span id="GathererCost">11</span>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="scripts/main.js"></script>
+
+		<script type="text/javascript" src="scripts/gatherers.js"></script>
+
+		<script type="text/javascript" src="scripts/saveload.js" defer></script>
+
+	</body>
+
+</html>
+
