@@ -2,12 +2,15 @@
 
 // resource globals //
 var credits = 0;
+var minerals = 0;
 
 // stats globals //
 var creditspersec = 0;
+var mineralspersec = 0;
 
 // gatherer globals //
 var creditgatherers = 0;
+var mineralgatherers = 0;
 
 // ETC vars //
 var TruncateNumber = 'standard';
@@ -25,6 +28,10 @@ function clickThing(number, type)
 				credits += number;
 				document.getElementById("credits").innerHTML = fnum(credits);
 				break;
+			case "minerals":
+				minerals += number;
+				document.getElementById("minerals").innerHTML = fnum(minerals);
+				break;
 
 		}
 	}
@@ -32,11 +39,13 @@ function clickThing(number, type)
 
 function recalculateCosts(){
 		CreditGatherer.recalcCost();
+		MineralGatherer.recalcCost();
 }
 
 window.setInterval( function() {
 
 	clickThing((CreditGatherer.number*CreditGatherer.creditClickValue), "credits");
+	clickThing((MineralGatherer.number*MineralGatherer.mineralClickValue), "minerals");
 }, 100);
 
 function fnum(x) {

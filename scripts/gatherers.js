@@ -1,13 +1,14 @@
 // Gatherers info //
 
-var Gatherer = function(name, creditCost, costMult, htmlNextCreditCost) {
+var Gatherer = function(name, creditCost, costMult, htmlNextCreditCost, creditClickValue, mineralClickValue) {
 	this.name = name;
 	this.creditCost = creditCost;
 	this.costMult = costMult;
 	this.htmlNextCreditCost = htmlNextCreditCost;
-	this.creditClickValue = 1;
+	this.creditClickValue = creditClickValue;
 	this.number = 0;
 	this.curCreditCost = creditCost;
+	this.mineralClickValue = mineralClickValue;
 };
 
 Gatherer.prototype.buyOne = function() {
@@ -49,9 +50,20 @@ function checkGathererButtons() {
 }
 
 var CreditGatherer = new Gatherer(
-/*Name*/			"CreditGatherer",
+/*Name*/			"CrewMember",
 /*creditCost*/		10,
 /*costMult*/		1.1,
-/*htmlNextCreditCost*/'GathererCost'
+/*htmlNextCreditCost*/'GathererCost',
+/*creditClickValue*/ 1,
+/*mineralClickValue*/ 0
 
+);
+
+var MineralGatherer = new Gatherer(
+/*Name*/			"MiningDroid",
+/*creditCost*/		100,
+/*costMult*/		1.1,
+/*htmlNextCreditCost*/'MinerCost',
+/*creditClickValue*/ 0,
+/*mineralClickValue*/ 1
 );
