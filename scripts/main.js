@@ -3,14 +3,17 @@
 // resource globals //
 var credits = 0;
 var minerals = 0;
+var pulsarCrystals = 0;
 
 // stats globals //
 var creditspersec = 0;
 var mineralspersec = 0;
+var pulsarcrystalspersec = 0;
 
 // gatherer globals //
 var creditgatherers = 0;
 var mineralgatherers = 0;
+var pulsarcrystalgatherers = 0;
 
 // ETC vars //
 var TruncateNumber = 'standard';
@@ -32,6 +35,10 @@ function clickThing(number, type)
 				minerals += number;
 				document.getElementById("minerals").innerHTML = fnum(minerals);
 				break;
+			case "pulsarCrystals":
+				pulsarCrystals += number;
+				document.getElementById("pulsarCrystals").innerHTML = fnum(pulsarCrystals);
+				break;
 
 		}
 	}
@@ -46,6 +53,7 @@ window.setInterval( function() {
 
 	clickThing((CreditGatherer.number*CreditGatherer.creditClickValue), "credits");
 	clickThing((MineralGatherer.number*MineralGatherer.mineralClickValue), "minerals");
+	clickThing((PulsarCrystalGatherer.number*PulsarCrystalGatherer.pulsarCrystalClickValue), "minerals");
 }, 100);
 
 function fnum(x) {

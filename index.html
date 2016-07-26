@@ -18,6 +18,10 @@
 			</div>
 			<div class="col2"><span id="minerals">0</span>  <!--( <span id="creditspersec">0</span> gps)-->
 			</div>
+			<div class="col1"> Pulsar Crystals:
+			</div>
+			<div class="col2"><span id="pulsarCrystals">0</span>  <!--( <span id="creditspersec">0</span> gps)-->
+			</div>
 		</div>
 		<div id = 'gathercredits'>
 			<input type="image"  id="clickmoney" tabIndex="-1" onclick="clickThing(1,'creditsmouse')" src = "images/creditChip.png" title = "Click to gather credits yourself."></li>
@@ -34,7 +38,7 @@
 				<br /><br />
 				<div class="btn-group" role="group" aria-label="...">
 				<button id=btnbuyPeasant onclick="CreditGatherer.buyOne()"	type="button" class="btn btn-default">Recruit Crew Member</button>
-				<span id="GathererCost">11</span>
+				<span id="GathererCreditCost">11</span>
 				</div>
 			</div>
 
@@ -44,7 +48,18 @@
 				<br /><br />
 				<div class="btn-group" role="group" aria-label="...">
 				<button id=btnbuyMiningDroid onclick="MineralGatherer.buyOne()"	type="button" class="btn btn-default">Buy Mining Droid</button>
-				<span id="MinerCost">100</span>
+				<span id="MinerCreditCost">100</span>
+				</div>
+			</div>
+
+			<div id="TractorBeamTab" class = "container">
+				<br />
+				<a id ="BtnTractorBeamDesc" tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="TractorBeams" data-content=""> Tractor Beams <span class='badge' id="TractorBeams">0</span></a>
+				<br /><br />
+				<div class="btn-group" role="group" aria-label="...">
+				<button id=btnbuyTractorBeams onclick="PulsarCrystalGatherer.buyOne()"	type="button" class="btn btn-default">Buy Tractor Beam</button>
+				<span id="TractorCreditCost">1000</span>
+				<span id="TractorMineralCost">100</span>
 				</div>
 			</div>
 		</div>
