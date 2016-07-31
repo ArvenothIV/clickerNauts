@@ -53,7 +53,7 @@ window.setInterval( function() {
 
 	clickThing((CreditGatherer.number*CreditGatherer.creditClickValue), "credits");
 	clickThing((MineralGatherer.number*MineralGatherer.mineralClickValue), "minerals");
-	clickThing((PulsarCrystalGatherer.number*PulsarCrystalGatherer.pulsarCrystalClickValue), "minerals");
+	clickThing((PulsarCrystalGatherer.number*PulsarCrystalGatherer.pulsarCrystalClickValue), "pulsarCrystals");
 }, 100);
 
 function fnum(x) {
