@@ -18,6 +18,11 @@ var pulsarcrystalgatherers = 0;
 // ETC vars //
 var TruncateNumber = 'standard';
 
+// upgrade multipliers
+var CrystalMultiplier = 1;
+var CreditMultiplier = 1;
+var MineralMultiplier = 1;
+
 
 function clickThing(number, type)
 {
@@ -47,13 +52,38 @@ function clickThing(number, type)
 function recalculateCosts(){
 		CreditGatherer.recalcCost();
 		MineralGatherer.recalcCost();
+		PulsarCrystalGatherer.recalcCost();
+}
+
+function recalcMultipliers() {
+	if (PhaserII.flag === 1) {
+		CreditMultiplier += 0.1;
+	}
+	if (Silonon.flag === 1) {
+		CreditMultiplier += 0.2;
+	}
+	if (Hydrolock.flag === 1) {
+		MineralMultiplier += 0.1;
+	}
+	if (Neoloid.flag === 1) {
+		MineralMultiplier += 0.1;
+	}
+	if (Robowire.flag === 1) {
+		MineralMultiplier += 0.1;
+		CreditMultiplier  += 0.1;
+	}
+	if (Xwave.flag === 1) {
+		MineralMultiplier += 0.1;
+		CreditMultiplier  += 0.1;
+		CrystalMultiplier += 0.1;
+	}
 }
 
 window.setInterval( function() {
 
-	clickThing((CreditGatherer.number*CreditGatherer.creditClickValue), "credits");
-	clickThing((MineralGatherer.number*MineralGatherer.mineralClickValue), "minerals");
-	clickThing((PulsarCrystalGatherer.number*PulsarCrystalGatherer.pulsarCrystalClickValue), "pulsarCrystals");
+	clickThing((CreditGatherer.number*CreditGatherer.creditClickValue*CreditMultiplier), "credits");
+	clickThing((MineralGatherer.number*MineralGatherer.mineralClickValue*MineralMultiplier), "minerals");
+	clickThing((PulsarCrystalGatherer.number*PulsarCrystalGatherer.pulsarCrystalClickValue*CrystalMultiplier), "pulsarCrystals");
 }, 100);
 
 function fnum(x) {

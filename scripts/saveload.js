@@ -20,19 +20,9 @@
 		save("saveTime", saveTime);
 
 		//Currency variables
-		save("gold",gold);
-		save("wood", wood);
-		save("paper", paper);
-		save("iron", iron);
-		save("coal", coal);
-		save("steel", steel);
-		save("silver", silver);
-		save("faith", faith);
-		save("souls", souls);
-		save("tomes", tomes);
-		save("mana", mana);
-		save("goldStolen", goldStolen);
-		save("totalTimePlayed", totalTimePlayed);
+		save("credits",credits);
+		save("minerals", minerals);
+		save("pulsarCrystals", pulsarCrystals);
 
 		//Unit variables
  		save("peasants",Peasant.number - tavernpeasants);

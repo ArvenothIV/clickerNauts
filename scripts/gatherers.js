@@ -37,6 +37,7 @@ Gatherer.prototype.buyOne = function() {
 		document.getElementById('pulsarCrystals').innerHTML = fnum(pulsarCrystals);
 		document.getElementById(this.name).innerHTML = this.number;
 		this.recalcCost();
+		recalcMultipliers();
 	}
 	
 }
