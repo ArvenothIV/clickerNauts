@@ -37,6 +37,12 @@ Upgrade.prototype.buyUpgrade = function () {
 	}
 }
 
+Upgrade.prototype.canBuy = function() {
+	if (this.flag === 0) {
+		document.getElementById(this.name).style.visibility = "visible";
+	}
+}
+
 // Crew Upgrades
 var PhaserII = new Upgrade("Phaser MKII", 100000, 0, 0, "PhaserIICreditCost", "PhaserIIMineralCost", "PhaserIIPulsarCrystalCost");
 var Silonon = new Upgrade("Silonon Uniforms", 100000000, 1000000, 0, "SilononCreditCost", "SilononMineralCost", "SilononPulsarCrystalCost");

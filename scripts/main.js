@@ -22,6 +22,16 @@ var TruncateNumber = 'standard';
 var CrystalMultiplier = 1;
 var CreditMultiplier = 1;
 var MineralMultiplier = 1;
+var prestigeMultiplier = 1;
+
+// prestige costs
+var originalPrestigeCost = 1000000000000000;
+var curentPrestigeCost = 1000000000000000;
+
+
+document.getElementById("prestigeCreditCost").innerHTML = fnum(curentPrestigeCost);
+document.getElementById("prestigeMineralCost").innerHTML = fnum(curentPrestigeCost);
+document.getElementById("prestigePulsarCrystalCost").innerHTML = fnum(curentPrestigeCost);
 
 
 function clickThing(number, type)
@@ -79,11 +89,39 @@ function recalcMultipliers() {
 	}
 }
 
+function buyPrestige() {
+
+	if (credits >= curentPrestigeCost && minerals >= curentPrestigeCost && pulsarCrystals >= curentPrestigeCost) {
+		prestigeMultiplier += 1;
+
+		credits = 0;
+		minerals = 0;
+		pulsarCrystals = 0;
+
+		PhaserII.flag = 0;
+		Silonon.flag = 0;
+		Hydrolock.flag = 0;
+		Neoloid.flag = 0;
+		Robowire.flag = 0;
+		Xwave.flag = 0;
+
+		PhaserII.canBuy();
+		Silonon.canBuy();
+		Hydrolock.canBuy();
+		Neoloid.canBuy();
+		Robowire.canBuy();
+		Xwave.canBuy();
+
+		curentPrestigeCost = originalPrestigeCost + Math.pow(curentPrestigeCost, 2.1);
+	}
+	
+}
+
 window.setInterval( function() {
 
-	clickThing((CreditGatherer.number*CreditGatherer.creditClickValue*CreditMultiplier), "credits");
-	clickThing((MineralGatherer.number*MineralGatherer.mineralClickValue*MineralMultiplier), "minerals");
-	clickThing((PulsarCrystalGatherer.number*PulsarCrystalGatherer.pulsarCrystalClickValue*CrystalMultiplier), "pulsarCrystals");
+	clickThing((CreditGatherer.number*CreditGatherer.creditClickValue*CreditMultiplier*prestigeMultiplier), "credits");
+	clickThing((MineralGatherer.number*MineralGatherer.mineralClickValue*MineralMultiplier*prestigeMultiplier), "minerals");
+	clickThing((PulsarCrystalGatherer.number*PulsarCrystalGatherer.pulsarCrystalClickValue*CrystalMultiplier*prestigeMultiplier), "pulsarCrystals");
 }, 100);
 
 function fnum(x) {
@@ -102,11 +140,11 @@ function fnum(x) {
 		}
 	 
 		if(x < 1000000000) {
-			return (x/1000000).toFixed(2) + "M";
+			return (x/1000000).toFixed(2) + "B";
 		}
 	 
 		if(x < 1000000000000) {
-			return (x/1000000000).toFixed(2) + "B";
+			return (x/1000000000).toFixed(2) + "T";
 		}
 		
 		if(x < 1000000000000000) {
