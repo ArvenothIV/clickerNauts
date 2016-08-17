@@ -31,7 +31,10 @@
 
 		<div id="Production" class= "panel panel-default">
 			<div class = "panel-heading">
-				<div class="panel-title" id = 'ProductionTitle'>Ship:</div>
+				<div class="tooltip">
+					<div class="panel-title" id = 'ProductionTitle'>Ship:</div>
+					<span class="tooltiptext">Buying a new ship increases production by 100%</span>
+				</div>
 				<img id="shipImg" src="images/ship1.png" />
 				<div id="prestigeTab" class="container" >
 					<br />
@@ -49,7 +52,10 @@
 		
 			<div id="PeasantTab" class = "container">
 				<br />
+				<div class="tooltip">
 				<a id ="BtnPeasantDesc" tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="CrewMembers" data-content=""> Crew Member<img src="images/crew.png">: <span class='badge' id="CrewMember">0</span></a>
+				<span class="tooltiptext">Crew Members generate credits</span>
+				</div>
 				<br /><br />
 				<div class="btn-group" role="group" aria-label="...">
 					<button id=btnbuyPeasant onclick="CreditGatherer.buyOne()"	type="button" class="btn btn-default">Recruit Crew Member</button>
@@ -64,7 +70,10 @@
 
 			<div id="MiningDroidTab" class = "container">
 				<br />
+				<div class="tooltip">
 				<a id ="BtnMiningDroidDesc" tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="MiningDroids" data-content=""> Mining Droids<img src="images/droid.png">: <span class='badge' id="MiningDroid">0</span></a>
+				<span class="tooltiptext">Mining Droids generate minerals</span>
+				</div>
 				<br /><br />
 				<div class="btn-group" role="group" aria-label="...">
 					<button id=btnbuyMiningDroid onclick="MineralGatherer.buyOne()"	type="button" class="btn btn-default">Buy Mining Droid</button>
@@ -79,7 +88,10 @@
 
 			<div id="TractorBeamTab" class = "container">
 				<br />
+				<div class="tooltip">
 				<a id ="BtnTractorBeamDesc" tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="TractorBeams" data-content=""> Tractor Beams<img src="images/tractorbeam.png">: <span class='badge' id="TractorBeams">0</span></a>
+				<span class="tooltiptext">Tractor Beams generate Pulsar Crystals</span>
+				</div>
 				<br /><br />
 				<div class="btn-group" role="group" aria-label="...">
 					<button id=btnbuyTractorBeams onclick="PulsarCrystalGatherer.buyOne()"	type="button" class="btn btn-default">Buy Tractor Beam</button>
@@ -95,7 +107,10 @@
 
 		<div id="Upgrades" class= "panel panel-default">
 			<div class = "panel-heading">
-				<div class="panel-title" id = 'ProductionTitle'>Upgrades</div>
+				<div class="tooltip">
+					<div class="panel-title" id = 'ProductionTitle'>Upgrades</div>
+					<span class="tooltiptext">Upgrades boost production by 1%</span>
+				</div>
 			</div>
 			<div id="CrewUpgradesTab" class="container" >
 			<br />
