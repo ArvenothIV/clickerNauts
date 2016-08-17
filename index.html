@@ -5,20 +5,22 @@
 		<meta charset="UTF-8">
 
 	  <title>ClickerNauts</title>
+
+	  <link href="clickerNauts.css" rel="stylesheet">
 	</head>
 
-	<body>
+	<body background="images/starfield.jpg">
 		<div id = "golddiv" rel="tooltip">
 		<!-- <img src = "images/money_creditssmall.png" Title="Gold" title ="" data-html="true" id="resgoldimage" > -->
-			<div class="col1"> Credits:
+			<div class="col1"> Credits <img id="fixCreditSize" src="images/creditChip.png">: 
 			</div>
 			<div class="col2"><span id="credits">0</span>  <!--( <span id="creditspersec">0</span> gps)-->
 			</div>
-			<div class="col1"> Minerals:
+			<div class="col1"> Minerals <img src="images/mineral.png">:
 			</div>
 			<div class="col2"><span id="minerals">0</span>  <!--( <span id="creditspersec">0</span> gps)-->
 			</div>
-			<div class="col1"> Pulsar Crystals:
+			<div class="col1"> Pulsar Crystals <img src="images/pulsarCrystal.png">:
 			</div>
 			<div class="col2"><span id="pulsarCrystals">0</span>  <!--( <span id="creditspersec">0</span> gps)-->
 			</div>
@@ -29,45 +31,64 @@
 
 		<div id="Production" class= "panel panel-default">
 			<div class = "panel-heading">
-				<div class="panel-title" id = 'ProductionTitle'>Ship</div>
+				<div class="panel-title" id = 'ProductionTitle'>Ship:</div>
+				<img id="shipImg" src="images/ship1.png" />
+				<div id="prestigeTab" class="container" >
+					<br />
+					<div id="prestige" >
+						<button id=btnbuyPrestige onclick="buyPrestige()"	type="button" class="btn btn-default">Buy New Ship</button>
+						<span > <img id="fixCreditSize" src="images/creditChip.png">/<img src="images/mineral.png">/<img src="images/pulsarCrystal.png">: </span>
+						<div class="costsPrestige">
+							<span id="prestigeCreditCost"></span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+							<span id="prestigeMineralCost"></span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+							<span id="prestigePulsarCrystalCost"></span>
+						</div>
+					</div>
+				</div>
 			</div>
 		
 			<div id="PeasantTab" class = "container">
 				<br />
-				<a id ="BtnPeasantDesc" tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="CrewMembers" data-content=""> Crew Member <span class='badge' id="CrewMember">0</span></a>
+				<a id ="BtnPeasantDesc" tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="CrewMembers" data-content=""> Crew Member<img src="images/crew.png">: <span class='badge' id="CrewMember">0</span></a>
 				<br /><br />
 				<div class="btn-group" role="group" aria-label="...">
-				<button id=btnbuyPeasant onclick="CreditGatherer.buyOne()"	type="button" class="btn btn-default">Recruit Crew Member</button>
-				<span > Costs Credits/Minerals/PulsarCyrstals: </span>
-				<span id="GathererCreditCost">11</span>
-				<span id="GathererMineralCost">0</span>
-				<span id="GathererPulsarCrystalCost">0</span>
+					<button id=btnbuyPeasant onclick="CreditGatherer.buyOne()"	type="button" class="btn btn-default">Recruit Crew Member</button>
+					<span > <img id="fixCreditSize" src="images/creditChip.png">/<img src="images/mineral.png">/<img src="images/pulsarCrystal.png">: </span>
+					<div class="costsGatherer">
+						<span id="GathererCreditCost">11</span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="GathererMineralCost">0</span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="GathererPulsarCrystalCost">0</span>
+					</div>
 				</div>
 			</div>
 
 			<div id="MiningDroidTab" class = "container">
 				<br />
-				<a id ="BtnMiningDroidDesc" tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="MiningDroids" data-content=""> Mining Droids <span class='badge' id="MiningDroid">0</span></a>
+				<a id ="BtnMiningDroidDesc" tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="MiningDroids" data-content=""> Mining Droids<img src="images/droid.png">: <span class='badge' id="MiningDroid">0</span></a>
 				<br /><br />
 				<div class="btn-group" role="group" aria-label="...">
-				<button id=btnbuyMiningDroid onclick="MineralGatherer.buyOne()"	type="button" class="btn btn-default">Buy Mining Droid</button>
-				<span > Costs Credits/Minerals/PulsarCyrstals: </span>
-				<span id="MinerCreditCost">100</span>
-				<span id="MinerMineralCost">0</span>
-				<span id="MinerPulsarCrystalCost">0</span>
+					<button id=btnbuyMiningDroid onclick="MineralGatherer.buyOne()"	type="button" class="btn btn-default">Buy Mining Droid</button>
+					<span > Costs <img id="fixCreditSize" src="images/creditChip.png">/<img src="images/mineral.png">/<img src="images/pulsarCrystal.png">: </span>
+					<div class="costsGatherer">
+						<span id="MinerCreditCost">100</span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="MinerMineralCost">0</span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="MinerPulsarCrystalCost">0</span>
+					</div>
 				</div>
 			</div>
 
 			<div id="TractorBeamTab" class = "container">
 				<br />
-				<a id ="BtnTractorBeamDesc" tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="TractorBeams" data-content=""> Tractor Beams <span class='badge' id="TractorBeams">0</span></a>
+				<a id ="BtnTractorBeamDesc" tabindex="0" class="btn btn-sm btn-primary" role="button" data-toggle="popover" data-trigger="focus" data-html="true" title="TractorBeams" data-content=""> Tractor Beams<img src="images/tractorbeam.png">: <span class='badge' id="TractorBeams">0</span></a>
 				<br /><br />
 				<div class="btn-group" role="group" aria-label="...">
-				<button id=btnbuyTractorBeams onclick="PulsarCrystalGatherer.buyOne()"	type="button" class="btn btn-default">Buy Tractor Beam</button>
-				<span > Costs Credits/Minerals/PulsarCyrstals: </span>
-				<span id="TractorCreditCost">1000</span>
-				<span id="TractorMineralCost">100</span>
-				<span id="TractorPulsarCrystalCost">0</span>
+					<button id=btnbuyTractorBeams onclick="PulsarCrystalGatherer.buyOne()"	type="button" class="btn btn-default">Buy Tractor Beam</button>
+					<span > Costs <img id="fixCreditSize" src="images/creditChip.png">/<img src="images/mineral.png">/<img src="images/pulsarCrystal.png">: </span>
+					<div class="costsGatherer">
+						<span id="TractorCreditCost">1000</span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="TractorMineralCost">100</span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="TractorPulsarCrystalCost">0</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -80,56 +101,63 @@
 			<br />
 				<div id="Phaser MKII" >
 					<button id=btnbuyPhaserUpgrade onclick="PhaserII.buyUpgrade()"	type="button" class="btn btn-default">Buy Phasers MKII</button>
-					<span id="PhaserIICreditCost"></span>
-					<span id="PhaserIIMineralCost"></span>
-					<span id="PhaserIIPulsarCrystalCost"></span>
+					<span > Costs <img id="fixCreditSize" src="images/creditChip.png">/<img src="images/mineral.png">/<img src="images/pulsarCrystal.png">: </span>
+					<div class="costs">
+						<span id="PhaserIICreditCost"></span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="PhaserIIMineralCost"></span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="PhaserIIPulsarCrystalCost"></span>
+					</div>
 				</div>
 				<div id="Silonon Uniforms" >
 					<button id=btnbuySilononUpgrade onclick="Silonon.buyUpgrade()"	type="button" class="btn btn-default">Buy Silonon Uniforms</button>
-					<span id="SilononCreditCost"></span>
-					<span id="SilononMineralCost"></span>
-					<span id="SilononPulsarCrystalCost"></span>
+					<span > Costs <img id="fixCreditSize" src="images/creditChip.png">/<img src="images/mineral.png">/<img src="images/pulsarCrystal.png">: </span>
+					<div class="costs">
+						<span id="SilononCreditCost"></span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="SilononMineralCost"></span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="SilononPulsarCrystalCost"></span>
+					</div>
 				</div>
 			</div>
 			<div id="DroidUpgradeTab" class="container" >
 			<br />
 				<div id="Hydrolocking Systems" >
 					<button id=btnbuyHydrolockUpgrade onclick="Hydrolock.buyUpgrade()"	type="button" class="btn btn-default">Buy Hydrolocking Systems</button>
-					<span id="HydrolockCreditCost"></span>
-					<span id="HydrolockMineralCost"></span>
-					<span id="HydrolockPulsarCrystalCost"></span>
+					<span > Costs <img id="fixCreditSize" src="images/creditChip.png">/<img src="images/mineral.png">/<img src="images/pulsarCrystal.png">: </span>
+					<div class="costs">
+						<span id="HydrolockCreditCost"></span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="HydrolockMineralCost"></span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="HydrolockPulsarCrystalCost"></span>
+					</div>
 				</div>
 				<div id="Neoloid Appendages" >
 					<button id=btnbuyNeoloidUpgrade onclick="Neoloid.buyUpgrade()"	type="button" class="btn btn-default">Buy Neoloid Appendages</button>
-					<span id="NeoloidCreditCost"></span>
-					<span id="NeoloidMineralCost"></span>
-					<span id="NeoloidPulsarCrystalCost"></span>
+					<span > Costs <img id="fixCreditSize" src="images/creditChip.png">/<img src="images/mineral.png">/<img src="images/pulsarCrystal.png">: </span>
+					<div class="costs">
+						<span id="NeoloidCreditCost"></span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="NeoloidMineralCost"></span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="NeoloidPulsarCrystalCost"></span>
+					</div>
 				</div>
 				<div id="Nanofiber Robowire" >
 					<button id=btnbuyRobowireUpgrade onclick="Robowire.buyUpgrade()"	type="button" class="btn btn-default">Buy Nanofiber Robowire</button>
-					<span id="RobowireCreditCost"></span>
-					<span id="RobowireMineralCost"></span>
-					<span id="RobowirePulsarCrystalCost"></span>
+					<span > Costs <img id="fixCreditSize" src="images/creditChip.png">/<img src="images/mineral.png">/<img src="images/pulsarCrystal.png">: </span>
+					<div class="costs">
+						<span id="RobowireCreditCost"></span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="RobowireMineralCost"></span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="RobowirePulsarCrystalCost"></span>
+					</div>
 				</div>
 			</div>
 			<div id="TractorUpgradeTab" class="container" >
 			<br />
 				<div id="Transavole X-wave" >
 					<button id=btnbuyXwaveUpgrade onclick="Xwave.buyUpgrade()"	type="button" class="btn btn-default">Buy Transavole X-wave</button>
-					<span id="XwaveCreditCost"></span>
-					<span id="XwaveMineralCost"></span>
-					<span id="XwavePulsarCrystalCost"></span>
-				</div>
-			</div>
-
-
-			<div id="TractorUpgradeTab" class="container" >
-			<br />
-				<div id="Transavole X-wave" >
-					<button id=btnbuyXwaveUpgrade onclick="buyPrestige()"	type="button" class="btn btn-default">Buy New Ship</button>
-					<span id="prestigeCreditCost"></span>
-					<span id="prestigeMineralCost"></span>
-					<span id="prestigePulsarCrystalCost"></span>
+					<span > Costs <img id="fixCreditSize" src="images/creditChip.png">/<img src="images/mineral.png">/<img src="images/pulsarCrystal.png">: </span>
+					<div class="costs">
+						<span id="XwaveCreditCost"></span><span>&nbsp&nbsp/&nbsp</span>
+						<span id="XwaveMineralCost"></span><span>&nbsp&nbsp/&nbsp&nbsp</span>
+						<span id="XwavePulsarCrystalCost"></span>
+					</div>
 				</div>
 			</div>
 		</div>

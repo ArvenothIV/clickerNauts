@@ -1,0 +1,44 @@
+body {
+    color: white;
+}
+
+#shipImg {
+	height: 100px;
+	width: 100px;
+	position: relative;
+}
+
+#fixCreditSize {
+	height: 30px;
+	width: 30px;
+	position: relative;
+}
+
+#Upgrades {
+	position: absolute;
+	right: 0%;
+	left: 50%;
+	top: 50%;
+}
+
+.costs {
+	position: relative;
+	left: 45%;
+	top: 60%;
+}
+
+.costsGatherer {
+	position: relative;
+	left: 25%;
+	top: 60%;
+}
+
+.costsPrestige {
+	position: relative;
+	left: 15%;
+	top: 60%;
+}
+
+.container {
+	width: 50%;
+}

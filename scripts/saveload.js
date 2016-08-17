@@ -139,23 +139,6 @@
 				//recalcMultipliers();
 			}
 
-		
-
-
-			
-			
-			
-
-			
-			
-			
-
-			
-
-			
-
-		
-			
 
 
 			//document.getElementById('verinfo').innerHTML = "<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span> Version " + gameVer;

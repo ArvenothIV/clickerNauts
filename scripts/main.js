@@ -113,6 +113,13 @@ function buyPrestige() {
 		Xwave.canBuy();
 
 		curentPrestigeCost = originalPrestigeCost + Math.pow(curentPrestigeCost, 2.1);
+		if (prestigeMultiplier <= 3) {
+			document.getElementById("imageid").src="images/ship" + prestigeMultiplier + ".png";
+		}
+		else {
+			alert("You have finished what is currently in the game! Bug Arvenoth on Dischord for more content!");
+		}
+
 	}
 	
 }
